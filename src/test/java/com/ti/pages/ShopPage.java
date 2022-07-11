@@ -23,16 +23,6 @@ public class ShopPage extends MainPage {
     @FindBy(css = "#comment")
     private WebElement txtComment;
 
-//    public ShopPage submitForm(){
-//        softAssert = new SoftAssert();
-//        currentURL = driver.getCurrentUrl();
-//        btnSendMessage.click();
-//        changedURL = driver.getCurrentUrl();
-//        softAssert.assertFalse(currentURL.equals(changedURL), "The message was not sent");
-//        softAssert.assertAll();
-//        return this;
-//    }
-
     public ShopPage clearForm(){
         btnClear.click();
         return this;
