@@ -28,18 +28,18 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "jdk.selected.JAVA_MODULE": "1.8 (3)",
-    "last_opened_file_path": "C:/Users/Azul/Desktop/material/SeBasico/zero/ZeroBank",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8 (3)&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Azul/Desktop/material/SeBasico/zero/ZeroBank&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Azul\Desktop\material\SeAvanzado\Liverpool\lib" />
@@ -54,16 +54,6 @@
     </key>
   </component>
   <component name="RunManager" selected="TestNG.C:/Users/Azul/Desktop/material/SeBasico/zero/AutomationPractice/testng.xml">
-    <configuration name="C:/Users/Azul/Desktop/material/SeAvanzado/Liverpool/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="ZeroBank" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="C:/Users/Azul/Desktop/material/SeBasico/zero/AutomationPractice/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="AutomationPractice" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -75,7 +65,7 @@
       </method>
     </configuration>
     <configuration name="TestClass" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="ZeroBank" />
+      <module name="AutomationPractice" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.ti.testcases.*" />
@@ -110,6 +100,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestClass.test003_CartReflectProductsAdded" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="AutomationPractice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ti.testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="PACKAGE_NAME" value="com.ti.testcases" />
+      <option name="MAIN_CLASS_NAME" value="com.ti.testcases.TestClass" />
+      <option name="METHOD_NAME" value="test003_CartReflectProductsAdded" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestClass.verifyHomeNavigation" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="AutomationPractice" />
       <extension name="coverage">
@@ -132,10 +141,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/Azul/Desktop/material/SeBasico/zero/AutomationPractice/testng.xml" />
+        <item itemvalue="TestNG.TestClass" />
+        <item itemvalue="TestNG.TestClass.test003_CartReflectProductsAdded" />
         <item itemvalue="TestNG.TestClass.productsCanBeAdded" />
         <item itemvalue="TestNG.TestClass.verifyHomeNavigation" />
-        <item itemvalue="TestNG.C:/Users/Azul/Desktop/material/SeAvanzado/Liverpool/testng.xml" />
-        <item itemvalue="TestNG.TestClass" />
       </list>
     </recent_temporary>
   </component>
