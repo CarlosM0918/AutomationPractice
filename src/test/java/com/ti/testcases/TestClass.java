@@ -29,13 +29,13 @@ public class TestClass extends BaseTestClass {
     }
 
     @Test(enabled = false)
-    void test004_RemoveFromCartHeader() throws InterruptedException {
+    void test004_RemoveFromCartHeader(){
         shopPage.categoryTShirt().selectProduct().addCart();
         shopPage.mouseHoverCart().removeProduct();
     }
 
     @Test(enabled = true)
-    void test005_CheckoutForm() {
+    void test005_CheckoutForm()  {
         shopPage.categoryTShirt().selectProduct().addCart();
 //        shopPage.searchProduct(inputData.get("product")).search().selectProduct().addCart();
         shopPage.mouseHoverCart().checkout();

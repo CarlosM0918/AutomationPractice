@@ -44,6 +44,9 @@ public class MainPage {
     @FindBy(css = "#button_order_cart")
     private WebElement btnCkeckout;
 
+    @FindBy(css = "#layer_cart")
+    private WebElement modal;
+
     public MainPage(){
 		PageFactory.initElements(driver, this);
     }
@@ -76,6 +79,7 @@ public class MainPage {
 
     public MainPage mouseHoverCart() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        new WebDriverWait(driver, Duration.ofSeconds(4)).until(ExpectedConditions.invisibilityOf(modal));
         Actions action = new Actions(driver);
         action.moveToElement(cartInHeader).build().perform();
         Assert.assertTrue(productsInCart.isDisplayed());
