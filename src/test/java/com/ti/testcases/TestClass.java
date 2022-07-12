@@ -16,28 +16,28 @@ public class TestClass extends BaseTestClass {
 
     @Test(enabled = false)
     void test002_productsCanBeAdded() {
-//        mainPage.home();
-        shopPage.categoryTShirt().selectProduct().addCart();
         shopPage.searchProduct(inputData.get("product")).search().selectProduct().addCart();
+        shopPage.categoryTShirt().selectProduct().addCart();
     }
 
     @Test(enabled = false )
-    void test003_CartReflectProductsAdded(){
-        shopPage.categoryTShirt().selectProduct().addCart();
+    void test003_CartReflectProductsAdded() {
         shopPage.searchProduct(inputData.get("product")).search().selectProduct().addCart();
+        shopPage.categoryTShirt().selectProduct().addCart();
         shopPage.verifyProductsInCart();
     }
 
     @Test(enabled = false)
-    void test004_RemoveFromCartHeader(){
+    void test004_RemoveFromCartHeader() {
         shopPage.categoryTShirt().selectProduct().addCart();
+        shopPage.searchProduct(inputData.get("product")).search().selectProduct().addCart();
         shopPage.mouseHoverCart().removeProduct();
     }
 
-    @Test(enabled = true)
-    void test005_CheckoutForm()  {
+    @Test(enabled = false)
+    void test005_CheckoutForm() {
         shopPage.categoryTShirt().selectProduct().addCart();
-//        shopPage.searchProduct(inputData.get("product")).search().selectProduct().addCart();
+        shopPage.searchProduct(inputData.get("product")).search().selectProduct().addCart();
         shopPage.mouseHoverCart().checkout();
     }
 

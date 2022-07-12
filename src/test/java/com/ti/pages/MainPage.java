@@ -31,7 +31,7 @@ public class MainPage {
     private WebElement btnAddCart;
     @FindBy(css = ".cross")
     private WebElement btnClose;
-    @FindBy(css = "h5[itemprop='name']")
+    @FindBy(css = "h5[itemprop='name'] a")
     private List<WebElement> searchResultList;
     @FindBy(css = ".products")
     private WebElement productsInCart;
@@ -39,7 +39,7 @@ public class MainPage {
     private WebElement cartInHeader;
     @FindBy(css = ".ajax_cart_no_product")
     private WebElement noExistancesInCart;
-    @FindBy(css = "a[title='remove this product from my cart']")
+    @FindBy(css = "span[class=remove_link] a")
     private WebElement btnRemove;
     @FindBy(css = "#button_order_cart")
     private WebElement btnCkeckout;
@@ -51,6 +51,16 @@ public class MainPage {
 		PageFactory.initElements(driver, this);
     }
 
+//        Recovery Scenario
+    void preLoading(WebElement obj){
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .until(ExpectedConditions.visibilityOf(obj));
+        }catch (NoSuchElementException te){
+            driver.navigate().refresh();
+            preLoading(obj);
+        }
+    }
 
     public MainPage search(){
         btnSearch.click();
@@ -86,6 +96,7 @@ public class MainPage {
         return this;
     }
     public MainPage removeProduct(){
+        new WebDriverWait(driver, Duration.ofSeconds(4)).until(ExpectedConditions.visibilityOf(btnRemove));
         Actions action = new Actions(driver);
         action.moveToElement(btnRemove).click().build().perform();
         System.out.println("removed");
@@ -118,12 +129,21 @@ public class MainPage {
 
     public MainPage selectProduct() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebElement firstProduct = searchResultList.get(0);
         js =(JavascriptExecutor)driver;
         js.executeScript("var element = document.getElementById('center_column');\n" +
                 "element.scrollIntoView()");
-        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.visibilityOfAllElements(searchResultList));
-        WebElement firstProduct = searchResultList.get(0);
-        firstProduct.click();
+        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.elementToBeClickable(firstProduct));
+
+        Actions action = new Actions(driver);
+
+//        try {
+//            firstProduct.click();
+//            System.out.println("lo hice d");
+//        }catch (NoSuchElementException nee){
+            action.moveToElement(firstProduct).click().build().perform();
+            System.out.println("catch");
+//        }
         return this;
     }
 
