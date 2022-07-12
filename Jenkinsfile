@@ -9,11 +9,12 @@ pipeline {
 //                 sh 'mvn clean compile validate'
 //             }
 //         }
-//         stage('package'){
-//           steps{
+        stage('package'){
+          steps{
+            sh 'cat .gitignore'
 //               sh 'mvn clean install package'
-//           }
-//         }
+          }
+        }
         stage('Build') {
             steps {
                 sh 'mvn clean test'
