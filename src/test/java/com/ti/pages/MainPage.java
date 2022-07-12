@@ -51,17 +51,6 @@ public class MainPage {
 		PageFactory.initElements(driver, this);
     }
 
-//        Recovery Scenario
-    void preLoading(WebElement obj){
-        try {
-            new WebDriverWait(driver, Duration.ofSeconds(5))
-                    .until(ExpectedConditions.visibilityOf(obj));
-        }catch (NoSuchElementException te){
-            driver.navigate().refresh();
-            preLoading(obj);
-        }
-    }
-
     public MainPage search(){
         btnSearch.click();
         return this;
