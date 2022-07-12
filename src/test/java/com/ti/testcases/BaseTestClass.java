@@ -22,11 +22,10 @@ public class BaseTestClass {
 
     @BeforeTest
     @Parameters("browser")
-     void setup(String browser) throws InterruptedException {
+     void setup(String browser){
         DriverFactory.getInstance().setDriver(BrowserType.valueOf(browser.toUpperCase()));
         DriverFactory.getInstance().getDriver().navigate().to(baseURL);
         DriverFactory.getInstance().getDriver().manage().deleteAllCookies();
-//        Thread.sleep(10000);
 
         inputData.put("product", "Dress");
         inputData.put("subjectText", "Customer service");
