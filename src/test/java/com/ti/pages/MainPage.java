@@ -78,10 +78,12 @@ public class MainPage {
 
     public MainPage mouseHoverCart() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        softAssert = new SoftAssert();
         new WebDriverWait(driver, Duration.ofSeconds(4)).until(ExpectedConditions.invisibilityOf(modal));
         Actions action = new Actions(driver);
         action.moveToElement(cartInHeader).build().perform();
-        Assert.assertTrue(productsInCart.isDisplayed());
+        softAssert.assertTrue(productsInCart.isDisplayed());
+        softAssert.assertAll();
         return this;
     }
     public MainPage removeProduct(){
@@ -100,8 +102,9 @@ public class MainPage {
 
     public MainPage verifyProductsInCart() {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Assert.assertFalse(noExistancesInCart.isDisplayed(), "The cart has no products added");
-
+        softAssert = new SoftAssert();
+        softAssert.assertFalse(noExistancesInCart.isDisplayed(), "The cart has no products added");
+        softAssert.assertAll();
         return this;
     }
 
@@ -125,14 +128,8 @@ public class MainPage {
         new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.elementToBeClickable(firstProduct));
 
         Actions action = new Actions(driver);
-
-//        try {
-//            firstProduct.click();
-//            System.out.println("lo hice d");
-//        }catch (NoSuchElementException nee){
-            action.moveToElement(firstProduct).click().build().perform();
-            System.out.println("catch");
-//        }
+        action.moveToElement(firstProduct).click().build().perform();
+        System.out.println("catch");
         return this;
     }
 
