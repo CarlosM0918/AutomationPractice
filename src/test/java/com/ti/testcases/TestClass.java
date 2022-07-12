@@ -8,66 +8,66 @@ import java.awt.*;
 import java.security.cert.TrustAnchor;
 
 public class TestClass extends BaseTestClass {
-    @Test(priority = 1, enabled = false)
+    @Test(priority = 1, enabled = true)
     void test001_verifyHomeNavigation() {
         mainPage.searchProduct(inputData.get("product")).search();
         mainPage.verifyProductsListed(inputData.get("product"));
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     void test002_productsCanBeAdded() {
         shopPage.searchProduct(inputData.get("product")).search().selectProduct().addCart();
         shopPage.categoryTShirt().selectProduct().addCart();
     }
 
-    @Test(enabled = false )
+    @Test(enabled = true )
     void test003_CartReflectProductsAdded() {
         shopPage.searchProduct(inputData.get("product")).search().selectProduct().addCart();
         shopPage.categoryTShirt().selectProduct().addCart();
         shopPage.verifyProductsInCart();
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     void test004_RemoveFromCartHeader() {
         shopPage.categoryTShirt().selectProduct().addCart();
         shopPage.searchProduct(inputData.get("product")).search().selectProduct().addCart();
         shopPage.mouseHoverCart().removeProduct();
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     void test005_CheckoutForm() {
         shopPage.categoryTShirt().selectProduct().addCart();
         shopPage.searchProduct(inputData.get("product")).search().selectProduct().addCart();
         shopPage.mouseHoverCart().checkout();
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     void test006_CantactFormWithValidData() throws AWTException {
         contactPage.goContactForm();
         contactPage.addFile();
         contactPage.selectSubject(inputData.get("subjectText")).withEmail(inputData.get("email")).withIdOrder(inputData.get("orderId"))
                 .withMessage(inputData.get("message")).sendMessage().verifySending();
     }
-    @Test(enabled = false)
+    @Test(enabled = true)
     void test007_CantactFormWithEmptyInputs(){
         contactPage.goContactForm();
         contactPage.sendMessage().verifyNoSending();
     }
-    @Test(enabled = false)
+    @Test(enabled = true)
     void test008_CantactFormWithNoSubject() throws AWTException {
         contactPage.goContactForm();
         contactPage.addFile();
         contactPage.withEmail(inputData.get("email")).withIdOrder(inputData.get("orderId"))
                 .withMessage(inputData.get("message")).sendMessage().verifyNoSending();
     }
-    @Test(enabled = false)
+    @Test(enabled = true)
     void test009_CantactFormWithInvalidEmail() throws AWTException {
         contactPage.goContactForm();
         contactPage.addFile();
         contactPage.selectSubject(inputData.get("subjectText")).withEmail(inputData.get("invalidEmail")).withIdOrder(inputData.get("orderId"))
                 .withMessage(inputData.get("message")).sendMessage().verifyNoSending();
     }
-    @Test(enabled = false)
+    @Test(enabled = true)
     void test010_CantactFormWithoutFile() {
         contactPage.goContactForm();
         contactPage.selectSubject(inputData.get("subjectText")).withEmail(inputData.get("email")).withIdOrder(inputData.get("orderId"))
@@ -75,14 +75,14 @@ public class TestClass extends BaseTestClass {
 
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     void test011_CantactFormWithBlankSpaces()  {
         contactPage.goContactForm();
         contactPage.selectSubject(inputData.get("subjectText")).withEmail(inputData.get("email")).withIdOrder(inputData.get("blankSpace"))
                 .withMessage(inputData.get("blankSpace")).sendMessage().verifyNoSending();
 
     }
-    @Test(enabled = false)
+    @Test(enabled = true)
     void test012_CantactFormWithSpecialCharacters()  {
         contactPage.goContactForm();
         contactPage.selectSubject(inputData.get("subjectText")).withEmail(inputData.get("email")).withIdOrder(inputData.get("specialCharacters"))
