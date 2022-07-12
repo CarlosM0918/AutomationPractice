@@ -77,14 +77,14 @@ public class ContactPage extends MainPage{
     public ContactPage verifySending(){
         softAssert = new SoftAssert();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        softAssert.assertTrue(throwedAlert.getText().contains("Your message has been successfully sent to our team."), "The message was not sent");
+        softAssert.assertTrue(throwedAlert.getText().contains("Your message has been successfully sent to our team."), "Message not sent. Error: The message was expected to be sent.");
         softAssert.assertAll();
         return this;
     }
     public ContactPage verifyNoSending(){
         softAssert = new SoftAssert();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        softAssert.assertFalse(throwedAlert.getText().contains("Your message has been successfully sent to our team."), "The message was sent");
+        softAssert.assertFalse(throwedAlert.getText().contains("Your message has been successfully sent to our team."), "Message sent. Error: The message was expected not to be sent.");
         softAssert.assertAll();
         return this;
     }
