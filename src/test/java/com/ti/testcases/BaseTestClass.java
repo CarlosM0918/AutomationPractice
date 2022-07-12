@@ -24,7 +24,7 @@ public class BaseTestClass {
     ExtentSparkReporter tiSpark;
 
 
-    @BeforeTest
+    @BeforeTest(groups = {"Smoke"})
     @Parameters("browser")
      void setup(String browser){
         DriverFactory.getInstance().setDriver(BrowserType.valueOf(browser.toUpperCase()));
@@ -49,7 +49,7 @@ public class BaseTestClass {
         extent.attachReporter(tiSpark);
     }
 
-    @AfterTest
+    @AfterTest(groups = {"Smoke"})
     void turnDown(){
         DriverFactory.getInstance().removeDriver();
         extent.flush();
