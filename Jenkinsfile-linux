@@ -10,10 +10,12 @@ pipeline {
 //               bat 'mvn clean compile install'
 //           }
 //         }
-        stage('Build') {
+        stage('Assign permissions'){
             steps{
                 sh "chmod +x -R ${env.WORKSPACE}"
             }
+        }
+        stage('Build') {
             steps {
                 sh './mvnw clean test'
             }
