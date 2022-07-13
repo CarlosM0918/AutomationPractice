@@ -4,20 +4,18 @@ pipeline {
         cron 'H 9 * * 0-6'
         pollSCM 'H * * * *'
     }
+    tools {
+      maven 'mvn'
+    }
     stages {
 //         stage('package'){
 //           steps{
 //               bat 'mvn clean compile install'
 //           }
 //         }
-        stage('Assign permissions'){
-            steps{
-                sh "chmod +x -R ${env.WORKSPACE}"
-            }
-        }
         stage('Build') {
             steps {
-                sh './mvnw clean test'
+                sh 'mvn clean test'
             }
         }
     }
