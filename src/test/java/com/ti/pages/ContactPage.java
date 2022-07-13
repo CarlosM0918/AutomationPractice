@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ContactPage extends MainPage{
     private SoftAssert softAssert;
-    String imgPath = System.getProperty("user.dir") + "/src/main/resources/";
+    String imgPath = System.getProperty("user.dir") + "\\src\\main\\resources\\";
     String imgfile = "imgPrueba.jpg";
     Robot robot;
 
@@ -101,8 +101,8 @@ public class ContactPage extends MainPage{
         robot = new Robot();
 //        Copiar y pegar la ruta ScreenCoord para cambiar cordenadas
         moveAndClick(343,49);
-        robot.delay(200);
         selectFromClipboard(imgPath);
+        robot.delay(300);
 //        Pegar el nombre del archivo y pegar
         moveAndClick(610,538);
         selectFromClipboard(imgfile);
