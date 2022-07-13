@@ -11,8 +11,10 @@ pipeline {
 //           }
 //         }
         stage('Build') {
-            steps {
+            steps{
                 sh "chmod +x -R ${env.WORKSPACE}"
+            }
+            steps {
                 sh './mvnw clean test'
             }
         }
