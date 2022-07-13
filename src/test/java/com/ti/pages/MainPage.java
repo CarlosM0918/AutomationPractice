@@ -90,7 +90,6 @@ public class MainPage {
         new WebDriverWait(driver, Duration.ofSeconds(4)).until(ExpectedConditions.visibilityOf(btnRemove));
         Actions action = new Actions(driver);
         action.moveToElement(btnRemove).click().build().perform();
-        System.out.println("removed");
         return this;
     }
 
@@ -129,7 +128,6 @@ public class MainPage {
 
         Actions action = new Actions(driver);
         action.moveToElement(firstProduct).click().build().perform();
-        System.out.println("catch");
         return this;
     }
 
