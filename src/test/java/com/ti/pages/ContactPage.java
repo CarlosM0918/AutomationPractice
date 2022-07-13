@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ContactPage extends MainPage{
     private SoftAssert softAssert;
-    String imgPath = "C:\\Users\\Azul\\Desktop\\material";
+    String imgPath = System.getProperty("user.dir") + "/src/main/resources/";
     String imgfile = "imgPrueba.jpg";
     Robot robot;
 
