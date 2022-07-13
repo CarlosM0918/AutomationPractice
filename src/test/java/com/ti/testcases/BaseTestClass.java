@@ -28,8 +28,8 @@ public class BaseTestClass {
     @Parameters("browser")
      void setup(String browser){
         DriverFactory.getInstance().setDriver(BrowserType.valueOf(browser.toUpperCase()));
-        DriverFactory.getInstance().getDriver().navigate().to(baseURL);
         DriverFactory.getInstance().getDriver().manage().deleteAllCookies();
+        DriverFactory.getInstance().getDriver().navigate().to(baseURL);
 
         inputData.put("product", "Dress");
         inputData.put("subjectText", "Customer service");
