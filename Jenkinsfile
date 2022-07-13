@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    triggers {
+        cron 'H 9 * * 0-6'
+        pollSCM 'H * * * *'
+    }
     tools{
         maven "mvn"
     }
