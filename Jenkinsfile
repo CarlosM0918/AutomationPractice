@@ -8,11 +8,11 @@ pipeline {
         maven "mvn"
     }
     stages {
-        stage('package'){
-          steps{
-              bat 'mvn clean compile install'
-          }
-        }
+//         stage('package'){
+//           steps{
+//               bat 'mvn clean compile install'
+//           }
+//         }
         stage('Build') {
             steps {
                 bat 'mvnw.cmd clean test'
