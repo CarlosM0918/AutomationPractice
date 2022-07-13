@@ -21,7 +21,7 @@ pipeline {
 //                 BUILD_USER = getBuildUser()
 //             }
             slackSend channel: 'jenkins_notifications', message: 'Build Started - ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${BUILD_USER} \n More info at ${env.BUILD_URL}'
-            slackUploadFile filePath: 'TIReport.html', initialComment: 'Report'
+            slackUploadFile channel: 'jenkins_notifications', credentialId: '66cbcabe-28e9-446f-9964-5cb3efde7c9b', filePath: 'TIReport.html', initialComment: 'Report'
 
 //             slackSend channel: 'jenkins_notifications',
 //                       color: COLOR_MAP[currentBuild.currentResult],
