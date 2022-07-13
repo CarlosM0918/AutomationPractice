@@ -45,7 +45,7 @@ public class BaseTestClass {
         shopPage = new ShopPage();
         contactPage = new ContactPage();
         extent = new ExtentReports();
-        tiSpark = new ExtentSparkReporter("results/TIReport.html");
+        tiSpark = new ExtentSparkReporter("TIReport.html");
         extent.attachReporter(tiSpark);
     }
 
