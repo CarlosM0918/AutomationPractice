@@ -1,2 +1,10 @@
-target
 TIReport.html
+allure-results
+target/
+.idea
+*.iml
+*.ipr
+*.iws
+build/
+.DS_Store
+logs
