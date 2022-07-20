@@ -1,26 +1,20 @@
 package com.ti.pages;
 
-import org.checkerframework.checker.units.qual.A;
-import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-import javax.swing.*;
 import java.awt.*;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class ContactPage extends MainPage{
     private SoftAssert softAssert;
-    String imgPath = System.getProperty("user.dir") + "\\src\\main\\resources\\";
-    String imgfile = "imgPrueba.jpg";
+    File imgFile = new File(System.getProperty("user.dir") + "\\src\\main\\resources\\imgPrueba.jpg");
+    String imgPath = imgFile.getAbsolutePath();
     Robot robot;
 
     @FindBy(css = "#contact-link")
@@ -89,50 +83,14 @@ public class ContactPage extends MainPage{
         return this;
     }
 
-    public ContactPage addFile() throws AWTException {
+    public ContactPage addFile(){
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         js =(JavascriptExecutor)driver;
         js.executeScript("var element = document.getElementById('center_column');\n" +
                 "element.scrollIntoView()");
-        Actions builder = new Actions(driver);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        builder.moveToElement(btnAddFile).click().build().perform();
-
-        robot = new Robot();
-//        Copiar y pegar la ruta ScreenCoord para cambiar cordenadas
-        moveAndClick(343,49);
-        selectFromClipboard(imgPath);
-        robot.delay(300);
-//        Pegar el nombre del archivo y pegar
-        moveAndClick(610,538);
-        selectFromClipboard(imgfile);
-
-        robot.keyRelease(KeyEvent.VK_ENTER);
-        robot.delay(3000);
+        btnAddFile.clear();
+        btnAddFile.sendKeys(imgPath);
         return this;
     }
 
-    private void selectFromClipboard(String elementForClipboard){
-        StringSelection stringSelection = new StringSelection(elementForClipboard);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection,null);
-
-        robot.keyPress(KeyEvent.VK_CONTROL);
-        robot.keyPress(KeyEvent.VK_V);
-
-        robot.keyRelease(KeyEvent.VK_V);
-        robot.keyRelease(KeyEvent.VK_CONTROL);
-        robot.delay(200);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.delay(200);
-    }
-
-    private void moveAndClick(int x,  int y){
-        robot.mouseMove(x, y);
-        robot.delay(200);
-
-        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-
-        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        robot.delay(1000);
-    }
 }
