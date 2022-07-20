@@ -13,7 +13,7 @@ platforms:
     osVersion: 10
     browser: edge
     browserVersion: 103.0
-parallelsPerPlatform: 3
+parallelsPerPlatform: 1
 browserstackLocal: false
 buildName: browserstack-build-3
 projectName: BrowserStack
