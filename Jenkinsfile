@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'mvnw.cmd clean test'
+                bat 'mvnw.cmd clean test -P SmokeSuite'
             }
         }
     }
