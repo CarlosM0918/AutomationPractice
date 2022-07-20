@@ -80,14 +80,14 @@ public class TestClass extends BaseTestClass {
         extent.createTest("test010_ContactFormWithoutFile").getStatus();
     }
 
-    @Test(enabled = true, groups = {"Bug"})
+    @Test(enabled = true, groups = {"Bug"}, priority = 2)
     void test011_ContactFormWithBlankSpaces()  {
         contactPage.goContactForm();
         contactPage.selectSubject(inputData.get("subjectText")).withEmail(inputData.get("email")).withIdOrder(inputData.get("blankSpace"))
                 .withMessage(inputData.get("blankSpace")).sendMessage().verifyNoSending();
         extent.createTest("test011_ContactFormWithBlankSpaces").fail(String.valueOf(Status.FAIL));
     }
-    @Test(enabled = true, groups = {"Bug"})
+    @Test(enabled = true, groups = {"Bug"}, priority = 3)
     void test012_ContactFormWithSpecialCharacters()  {
         contactPage.goContactForm();
         contactPage.selectSubject(inputData.get("subjectText")).withEmail(inputData.get("email")).withIdOrder(inputData.get("specialCharacters"))

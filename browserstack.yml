@@ -1,0 +1,22 @@
+userName: carloseduardomar_dcSawT
+accessKey: pXxzyxq6xVzpe3p9xpgP
+platforms:
+  - os: Windows
+    osVersion: 10
+    browser: chrome
+    browserVersion: latest
+  - os: Windows
+    osVersion: 10
+    browser: firefox
+    browserVersion: latest
+  - os: Windows
+    osVersion: 10
+    browser: edge
+    browserVersion: 103.0
+parallelsPerPlatform: 1
+browserstackLocal: false
+buildName: browserstack-build-1
+projectName: BrowserStack
+debug: true
+networkLogs: true
+consoleLogs: info
