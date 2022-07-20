@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Browser_Suite" thread-count="3" parallel="tests">
+<suite name="Browser_Suite">
     <test name="ChromeTest">
         <groups>
             <run>

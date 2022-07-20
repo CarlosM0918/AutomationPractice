@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="All_Suite" thread-count="1" parallel="tests">
+    <test name="ChromeTest">
+        <parameter name="browser" value="Chrome"/>
+        <groups>
+            <run>
+                <include name="Smoke"/>
+                <include name="Bug"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ti.testcases.TestClass"/>
+        </classes>
+    </test>
+<!--    <test name="EdgeTest">-->
+<!--        <parameter name="browser" value="Edge"/>-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="Bug"/>-->
+<!--                <include name="Smoke"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <classes>-->
+<!--            <class name="com.ti.testcases.TestClass"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="FirefoxTest">-->
+<!--        <parameter name="browser" value="Firefox"/>-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="Bug"/>-->
+<!--                <include name="Smoke"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <classes>-->
+<!--            <class name="com.ti.testcases.TestClass"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
