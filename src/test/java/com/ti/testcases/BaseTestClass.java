@@ -11,6 +11,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public class BaseTestClass {
 
     @BeforeTest(groups = {"Bug", "Smoke"})
     @Parameters("browser")
-     void setup(String browser){
+     void setup(String browser) throws MalformedURLException {
         DriverFactory.getInstance().setDriver(BrowserType.valueOf(browser.toUpperCase()));
         DriverFactory.getInstance().getDriver().manage().deleteAllCookies();
         DriverFactory.getInstance().getDriver().navigate().to(baseURL);

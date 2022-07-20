@@ -5,7 +5,6 @@
         <parameter name="browser" value="Chrome"/>
         <groups>
             <run>
-                
                 <include name="Bug"/>
             </run>
         </groups>
@@ -17,7 +16,6 @@
 <!--        <parameter name="browser" value="Edge"/>-->
 <!--            <groups>-->
 <!--                <run>-->
-<!--                    -->
 <!--                    <include name="Bug"/>-->
 <!--                </run>-->
 <!--            </groups>-->
@@ -29,7 +27,6 @@
 <!--        <parameter name="browser" value="Firefox"/>-->
 <!--            <groups>-->
 <!--                <run>-->
-<!--                    -->
 <!--                    <include name="Bug"/>-->
 <!--                </run>-->
 <!--            </groups>-->

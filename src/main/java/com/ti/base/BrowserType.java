@@ -6,5 +6,6 @@ public enum BrowserType {
     FIREFOX,
     SAFARI,
     IEXPLORER,
-    BRAVE
+    BRAVE,
+    BROWSERSTACK
 }

@@ -8,7 +8,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class DriverFactory {
     private String getOS = System.getProperty("os.name").toLowerCase();
@@ -29,13 +34,16 @@ public class DriverFactory {
         return driver.get();
     }
 
-    public void setDriver(BrowserType browserType){
+    public void setDriver(BrowserType browserType) throws MalformedURLException {
         System.out.println(getOS);
         if(getOS.contains("mac") && browserType.equals(BrowserType.SAFARI)){
             driver.set(new SafariDriver());
         }else if(browserType.equals(BrowserType.BRAVE)){
             System.setProperty(driverProperty, driverPath+driverName);
             driver.set(new ChromeDriver(new ChromeOptions().setBinary(braveLocation)));
+        }else if(browserType.equals(BrowserType.BROWSERSTACK)){
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            driver.set(new RemoteWebDriver(new URL("https://hub.browserstack.com/wd/hub"), capabilities));
         }else{
             WebDriverManager.getInstance(DriverManagerType.valueOf(browserType.toString())).setup();
             switch (browserType){
