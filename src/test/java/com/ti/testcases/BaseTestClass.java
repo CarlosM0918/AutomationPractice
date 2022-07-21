@@ -7,10 +7,13 @@ import com.ti.base.DriverFactory;
 import com.ti.pages.ContactPage;
 import com.ti.pages.ShopPage;
 import com.ti.pages.MainPage;
+import org.json.simple.parser.ParseException;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,9 +29,9 @@ public class BaseTestClass {
 
 
     @BeforeTest(groups = {"Bug", "Smoke"})
-    @Parameters("browser")
-     void setup(String browser) throws MalformedURLException {
-        DriverFactory.getInstance().setDriver(BrowserType.valueOf(browser.toUpperCase()));
+    @Parameters({"browser", "config", "environment" })
+     void setup(String browser, @Optional("IamOptional") String config_file, @Optional("IamOptional") String environment) throws Exception {
+        DriverFactory.getInstance().setDriver(BrowserType.valueOf(browser.toUpperCase()), config_file, environment);
         DriverFactory.getInstance().getDriver().manage().deleteAllCookies();
         DriverFactory.getInstance().getDriver().navigate().to(baseURL);
 
@@ -51,7 +54,7 @@ public class BaseTestClass {
     }
 
     @AfterTest(groups = {"Smoke", "Bug"})
-    void turnDown(){
+    void turnDown() throws Exception {
         DriverFactory.getInstance().removeDriver();
         extent.flush();
     }

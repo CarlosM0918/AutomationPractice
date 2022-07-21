@@ -2,6 +2,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Bug_Suite" thread-count="1" parallel="tests">
     <test name="ChromeTest">
+<!--        <parameter name="config" value="browserstack.conf.json"/>-->
+<!--        <parameter name="environment" value="env1"/>-->
         <parameter name="browser" value="Chrome"/>
         <groups>
             <run>
@@ -13,6 +15,8 @@
         </classes>
     </test>
 <!--    <test name="EdgeTest">-->
+<!--        <parameter name="config" value="browserstack.conf.json"/>-->
+<!--        <parameter name="environment" value="env1"/>-->
 <!--        <parameter name="browser" value="Edge"/>-->
 <!--            <groups>-->
 <!--                <run>-->
@@ -24,6 +28,8 @@
 <!--        </classes>-->
 <!--    </test>-->
 <!--    <test name="FirefoxTest">-->
+<!--        <parameter name="config" value="browserstack.conf.json"/>-->
+<!--        <parameter name="environment" value="env1"/>-->
 <!--        <parameter name="browser" value="Firefox"/>-->
 <!--            <groups>-->
 <!--                <run>-->

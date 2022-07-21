@@ -1,0 +1,26 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "carloseduardomar_dcSawT",
+  "key": "pXxzyxq6xVzpe3p9xpgP",
+
+  "capabilities": {
+    "bstack:options": {
+      "buildName": "browserstack-build-6",
+      "sessionName": "parallel_test_auto",
+      "browserVersion": "latest",
+      "debug": true
+    }
+  },
+
+  "environments": {
+    "env1": {
+      "browserName": "chrome"
+    },
+    "env2": {
+      "browserName": "firefox"
+    },
+    "env3": {
+      "browserName": "edge"
+    }
+  }
+}

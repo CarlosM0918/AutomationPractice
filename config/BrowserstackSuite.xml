@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Browserstack_Suite">
+<suite name="Browserstack_Suite" thread-count="3" parallel="tests">
     <test name="BrowserstackTest">
+        <parameter name="config" value="browserstack.conf.json"/>
+        <parameter name="environment" value="env1"/>
+        <parameter name="browser" value="Browserstack"/>
+        <groups>
+            <run>
+                <include name="Bug"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ti.testcases.TestClass"/>
+        </classes>
+    </test>
+    <test name="SingleTestEnv2">
+        <parameter name="config" value="browserstack.conf.json"/>
+        <parameter name="environment" value="env2"/>
+        <parameter name="browser" value="Browserstack"/>
+        <groups>
+            <run>
+                <include name="Bug"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ti.testcases.TestClass"/>
+        </classes>
+    </test>
+
+    <test name="SingleTestEnv3">
+        <parameter name="config" value="browserstack.conf.json"/>
+        <parameter name="environment" value="env3"/>
         <parameter name="browser" value="Browserstack"/>
         <groups>
             <run>
