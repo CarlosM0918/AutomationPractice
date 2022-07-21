@@ -35,6 +35,4 @@ TestNG Integration with BrowserStack and Jenkins.
 * Use `Jenkinsfile` for windows and `Jenkinsfile-linux` for linux or mac
 
 #### Notes:
-<p stile="font-size: 8"> In case of execution error disable `Lightweight checkout` </p>
-
-
+In case of execution error disable `Lightweight checkout`
