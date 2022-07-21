@@ -13,7 +13,7 @@ TestNG Integration with BrowserStack and Jenkins.
 
 ### Running your tests
 
-- To run a single test, run `mvn test`
+- To run a all tests in local, run `mvn test`
 - To run Smoke tests, run `mvn test -P SmokeSuite`
 - To run Bug tests, run `mvn test -P BugSuite`
 - To run the Browserstack test, run `mvn test -P Browserstack`
