@@ -93,6 +93,7 @@ public class MainPage {
     }
 
     public MainPage searchProduct(String product){
+        System.out.println(driver.getTitle());
         txtSearchBar.clear();
         txtSearchBar.sendKeys(product);
         return this;

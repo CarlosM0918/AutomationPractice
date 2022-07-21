@@ -27,7 +27,6 @@ public class BaseTestClass {
     ExtentReports extent;
     ExtentSparkReporter tiSpark;
 
-
     @BeforeTest(groups = {"Bug", "Smoke"})
     @Parameters({"browser", "config", "environment" })
      void setup(String browser, @Optional("IamOptional") String config_file, @Optional("IamOptional") String environment) throws Exception {
