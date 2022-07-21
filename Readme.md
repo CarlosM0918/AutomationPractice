@@ -2,7 +2,7 @@ The project is ready to run from a jenkins pipeline.
 
 # pre steps
 
-Add your own credentials in browserstack.yml
+Add your own credentials in `src/main/resources/conf/browserstack.conf.json`
 
 Install the Slack plugin for jenkins and configure it
 
