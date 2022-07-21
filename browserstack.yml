@@ -1,5 +1,5 @@
-userName: carloseduardomar_dcSawT
-accessKey: pXxzyxq6xVzpe3p9xpgP
+userName: BROWSERSTACK_USERNAME
+accessKey: BROWSERSTACK_ACCESS_KEY
 platforms:
   - os: Windows
     osVersion: 10
