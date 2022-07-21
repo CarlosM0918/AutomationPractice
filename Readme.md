@@ -2,6 +2,8 @@ The project is ready to run from a jenkins pipeline.
 
 # pre steps
 
+Add your own credentials in browserstack.yml
+
 Install the Slack plugin for jenkins and configure it
 
 Configure the desired jdk in Jenkins
@@ -15,3 +17,5 @@ Configure in Jenkins the version of Maven under the name of mvn
 Use `Jenkinsfile` for windows and `Jenkinsfile-linux` for linux or mac
 
 In case of execution error disable `Lightweight checkout`
+
+
